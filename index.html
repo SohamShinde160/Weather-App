@@ -2,102 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App | Soham</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <title>Weather App | CodeHelp</title>
   </head>
+
   <body>
     <div class="wrapper">
       <h1>Weather App</h1>
-
-      <div class="tabContainer">
-        <p class="tabone" data-userWeather>Your Weather</p>
-        <p class="tabtwo" data-searchWeather>Search Weather</p>
+      <div class="tab-container">
+        <p class="tab" data-userWeather>Your Weather</p>
+        <p class="tab" data-searchWeather>Search Weather</p>
       </div>
-
+      <!-- Container -->
       <div class="weather-container">
-        <!--! grant location -->
-        <div class="grant-location-container">
+        <!-- grant location access -->
+        <div class="sub-container grant-location-container">
           <img
             src="./assets/location.png"
             width="80"
             height="80"
             loading="lazy"
-            alt=""
           />
-          <h2>Grant Location Access</h2>
-          <p>Allow access to get weather information for your location</p>
-          <button class="grantbtn" data-grantAccess>Grant Access</button>
+          <p>Grant Location Access</p>
+          <p data-messageText>Allow Access To Get Weather Information</p>
+          <button class="btn" data-grantAccess>Grant Access</button>
         </div>
-
-        <!-- ! search weather -->
-        <form action="" data-searchForm class="form-container">
-          <input
-            type="text"
-            placeholder="Search for city..."
-            data-searchInput
-          />
-          <button class="citybtn">
+        <!-- search country form -->
+        <form class="form-container" data-searchForm>
+          <input placeholder="Search for city ..." data-searchInp />
+          <button class="btn" type="submit">
             <img
               src="./assets/search.png"
-              alt=""
               width="20"
               height="20"
               loading="lazy"
             />
           </button>
         </form>
-
-        <!-- ! loading screen -->
-        <div class="loading-screen-container">
-          <img src="./assets/loading.gif" width="150" height="150" alt="" />
-          <p>Loading....</p>
+        <!-- loading screen container -->
+        <div class="sub-container loading-container">
+          <img src="./assets/loading.gif" width="150" height="150" />
+          <p>Loading........</p>
         </div>
-
-        <!-- !-weather info -->
-        <div class="user-info-container">
-          <!-- ! city name and flag -->
+        <!-- show weather info -->
+        <div class="sub-container user-info-container">
           <div class="name">
             <p data-cityName></p>
-            <img data-countryIcon src="" alt="" />
+            <img crossorigin="anonymous" data-countryIcon />
           </div>
-
-          <!-- ! --Weather Desc -->
           <p data-weatherDesc></p>
-
-          <!-- !-- weather desc -->
-          <img src="" data-weatherIcon alt="" />
-
-          <!-- !-- weather temperature -->
+          <img class="icon" data-weatherIcon />
           <p data-temp></p>
-
-          <!-- !--weather info div -->
           <div class="parameter-container">
-            <!-- card1 -->
             <div class="parameter">
-              <img src="./assets/wind.png" alt="" />
-              <p>WindSpeed</p>
-              <p data-windSpeed></p>
+              <img src="./assets/wind.png" />
+              <p class="parameter-title">windspeed</p>
+              <p class="parameter-value" data-windspeed></p>
             </div>
-
-            <!-- card2 -->
             <div class="parameter">
-              <img src="./assets/humidity.png" alt="" />
-              <p>Humidity</p>
-              <p data-Humidity></p>
+              <img src="./assets/humidity.png" />
+              <p class="parameter-title">humidity</p>
+              <p class="parameter-value" data-humidity></p>
             </div>
-
-            <!-- card3 -->
             <div class="parameter">
-              <img src="./assets/cloud.png" alt="" />
-              <p>Cloud</p>
-              <p data-Cloud></p>
+              <img src="./assets/cloud.png" />
+              <p class="parameter-title">clouds</p>
+              <p class="parameter-value" data-cloudiness></p>
             </div>
           </div>
+        </div>
+        <!-- handle api fetch error -->
+        <div class="sub-container api-error-container">
+          <img src="./assets/not-found.png" data-notFoundImg />
+          <p data-apiErrorText></p>
+          <button class="btn" data-apiErrorBtn>Retry</button>
         </div>
       </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
