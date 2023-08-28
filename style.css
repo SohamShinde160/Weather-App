@@ -334,3 +334,29 @@ h1 {
 .form-container .btn img {
     object-fit: contain;
 }
+
+.footer {
+    margin-top: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer h3 {
+    color: white;
+}
+
+.footer #element {
+    color: #ff9100;
+    font-weight: 900;
+}
+
+.footer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 900;
+}

@@ -2,10 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/humidity.png" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Weather App | Soham</title>
   </head>
 
@@ -81,8 +87,29 @@
           <button class="btn" data-apiErrorBtn>Retry</button>
         </div>
       </div>
+
+      <div class="footer">
+        <h3>👨‍💻 Developer:- <span id="element"></span></h3>
+        <div>
+          &copy;2023 &nbsp; &nbsp; Source Code:
+          <a href="https://github.com/SohamShinde160" target="_blank"
+            ><img src="./assets/github.png" width="30px" height="30px" alt=""
+          /></a>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Soham S Shinde."],
+        typeSpeed: 150,
+        loop: true,
+        backSpeed: 100,
+        backDelay: 1000,
+      });
+    </script>
   </body>
 </html>
