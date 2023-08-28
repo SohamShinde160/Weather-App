@@ -35,7 +35,7 @@ h1 {
 .tab-container {
     width: 90%;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     max-width: 550px;
     display: flex;
     justify-content: space-between;
@@ -43,18 +43,30 @@ h1 {
 
 .tab {
     cursor: pointer;
-    font-size: 0.875rem;
-    letter-spacing: 1.75px;
-    padding: 5px 8px;
+    font-size: 1rem;
+    padding: 7px 13px;
+    font-weight: 900;
+}
+
+.tab:hover {
+    color: white;
 }
 
 .tab.current-tab {
-    background-color: rgba(219, 226, 239, 0.5);
-    border-radius: 4px;
+    background: linear-gradient(to bottom, rgba(33, 36, 43, 0.651), rgba(58, 2, 83, 0.11));
+    border-radius: 20px;
+    border: 1px solid rgba(206, 206, 206, 0.514);
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.322);
+}
+
+.tab.current-tab:hover {
+    color: white;
+    border: 1px solid rgba(206, 206, 206, 0.767);
+    background: linear-gradient(to bottom, rgba(33, 36, 43, 0.651), rgba(97, 3, 141, 0.322));
 }
 
 .weather-container {
-    margin-block: 4rem;
+    margin-block: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -75,12 +87,22 @@ h1 {
 /* button */
 .btn {
     all: unset;
-    font-size: 0.85rem;
     text-transform: uppercase;
-    padding: 10px 30px;
-    border-radius: 5px;
+    font-weight: 900;
     cursor: pointer;
-    background-color: var(--colorDark2);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    background: linear-gradient(to bottom, rgba(33, 36, 43, 0.651), rgba(67, 2, 97, 0.336));
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(206, 206, 206, 0.514);
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.253);
+}
+
+.btn:hover {
+    color: white;
+    background: linear-gradient(to bottom, rgba(48, 52, 61, 0.651), rgba(97, 3, 141, 0.541));
+    cursor: pointer;
 }
 
 .sub-container {
@@ -107,8 +129,12 @@ h1 {
 
 .grant-location-container p:first-of-type {
     font-size: 1.75rem;
-    font-weight: 600;
-    text-align: center;
+    font-weight: 900;
+    background: linear-gradient(to right, #f32170,
+            #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    background-clip: initial;
+    -webkit-background-clip: text;
 }
 
 .grant-location-container p:last-of-type {
@@ -117,6 +143,8 @@ h1 {
     margin-top: 0.75rem;
     margin-bottom: 1.75rem;
     letter-spacing: 0.75px;
+    font-weight: 900;
+    color: white;
     text-align: center;
 }
 
@@ -130,6 +158,9 @@ h1 {
 
 .loading-container p {
     text-transform: uppercase;
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
 }
 
 .api-error-container {
@@ -143,11 +174,13 @@ h1 {
 
 .api-error-container p {
     text-align: center;
+    font-weight: 900;
+    color: white;
 }
 
 .api-error-container img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
@@ -157,13 +190,15 @@ h1 {
 }
 
 .user-info-container p {
-    font-size: 1.5rem;
-    font-weight: 200;
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
-.user-info-container img {
-    width: 90px;
-    height: 90px;
+.user-info-container .icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(128, 128, 128, 0.295);
+    border-radius: 50%;
 }
 
 .name {
@@ -175,6 +210,7 @@ h1 {
 
 .name p {
     font-size: 2rem;
+    color: white;
 }
 
 .name img {
@@ -184,8 +220,9 @@ h1 {
 }
 
 .user-info-container p[data-temp] {
-    font-size: 2.75rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
 }
 
 .user-info-container.active {
@@ -205,14 +242,21 @@ h1 {
 .parameter {
     width: 30%;
     max-width: 200px;
-    background-color: rgba(219, 226, 239, 0.5);
-    border-radius: 5px;
+    background: linear-gradient(137deg, rgba(4, 5, 40, 0.596) 0%, rgba(0, 0, 0, 0.589) 85%, rgba(5, 6, 44, 0.603) 100%);
+    border-radius: 10px;
     padding: 1rem;
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.096);
+    border: 1px solid rgba(255, 255, 255, 0.226);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 5px 0;
+}
+
+.parameter:hover {
+    box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.199);
+    border: 1px solid rgba(255, 255, 255, 0.548);
 }
 
 .parameter img {
@@ -264,16 +308,18 @@ h1 {
     width: calc(100% - 80px);
     height: 40px;
     padding: 0 20px;
-    background-color: rgba(219, 226, 239, 0.5);
+    background: linear-gradient(to bottom, rgba(33, 36, 43, 0.651), rgba(67, 2, 97, 0.336));
     border-radius: 10px;
+    font-weight: 900;
 }
 
 .form-container input:focus {
-    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .form-container input::placeholder {
     color: rgba(255, 255, 255, 0.7);
+    font-weight: 900;
 }
 
 .form-container .btn {
