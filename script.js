@@ -1,4 +1,5 @@
 
+
 const userTab = document.querySelector("[data-userWeather]");
 const searchTab = document.querySelector("[data-searchWeather]");
 const userContainer = document.querySelector(".weather-container");
@@ -11,6 +12,7 @@ const searchInp = document.querySelector("[data-searchInp]");
 const apiErrorContainer = document.querySelector(".api-error-container");
 let currentTab = userTab;
 const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
+
 
 
 currentTab.classList.add("current-tab");
@@ -50,6 +52,7 @@ const apiErrorMessage = document.querySelector("[data-apiErrorText]");
 const apiErrorBtn = document.querySelector("[data-apiErrorBtn]");
 
 
+
 function getFromSessionStorage() {
   const localCoordinates = sessionStorage.getItem("user-coordinates");
   if (!localCoordinates) {
@@ -71,6 +74,7 @@ function getLocation() {
 }
 
 
+
 function showPosition(position) {
   const userCoordinates = {
     lat: position.coords.latitude,
@@ -79,6 +83,7 @@ function showPosition(position) {
   sessionStorage.setItem("user-coordinates", JSON.stringify(userCoordinates));
   fetchUserWeatherInfo(userCoordinates);
 }
+
 
 
 function showError(error) {
@@ -98,6 +103,7 @@ function showError(error) {
   }
 }
 
+
 getFromSessionStorage();
 grantAccessBtn.addEventListener("click", getLocation);
 
@@ -108,6 +114,7 @@ async function fetchUserWeatherInfo(coordinates) {
   grantAccessContainer.classList.remove("active");
   loadingScreen.classList.add("active");
 
+  
   try {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
@@ -129,6 +136,7 @@ async function fetchUserWeatherInfo(coordinates) {
     apiErrorBtn.addEventListener("click", fetchUserWeatherInfo);
   }
 }
+
 
 
 function renderWeatherInfo(weatherInfo) {
@@ -160,6 +168,7 @@ searchForm.addEventListener("submit", (e) => {
   fetchSearchWeatherInfo(searchInp.value);
   searchInp.value = "";
 });
+
 
 
 async function fetchSearchWeatherInfo(city) {
