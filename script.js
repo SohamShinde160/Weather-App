@@ -1,4 +1,4 @@
-// - - - - - - - - - - - -Tab Handling- - - - - - - - - - - -
+
 const userTab = document.querySelector("[data-userWeather]");
 const searchTab = document.querySelector("[data-searchWeather]");
 const userContainer = document.querySelector(".weather-container");
@@ -12,7 +12,7 @@ const apiErrorContainer = document.querySelector(".api-error-container");
 let currentTab = userTab;
 const API_KEY = "d1845658f92b31c64bd94f06f7188c9c";
 
-// Setting default tab
+
 currentTab.classList.add("current-tab");
 
 function switchTab(clickedTab) {
@@ -41,7 +41,7 @@ searchTab.addEventListener("click", () => {
   switchTab(searchTab);
 });
 
-// - - - - - - - - - - - -User Weather Handling- - - - - - - - - - - -
+
 const grantAccessBtn = document.querySelector("[data-grantAccess]");
 const messageText = document.querySelector("[data-messageText]");
 const loadingScreen = document.querySelector(".loading-container");
@@ -49,7 +49,7 @@ const apiErrorImg = document.querySelector("[data-notFoundImg]");
 const apiErrorMessage = document.querySelector("[data-apiErrorText]");
 const apiErrorBtn = document.querySelector("[data-apiErrorBtn]");
 
-// Check if coordinates are already present in Session Storage
+
 function getFromSessionStorage() {
   const localCoordinates = sessionStorage.getItem("user-coordinates");
   if (!localCoordinates) {
@@ -60,8 +60,7 @@ function getFromSessionStorage() {
   }
 }
 
-// Get Coordinates using geoLocation
-// https://www.w3schools.com/html/html5_geolocation.asp
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -71,7 +70,7 @@ function getLocation() {
   }
 }
 
-// Store User Coordinates
+
 function showPosition(position) {
   const userCoordinates = {
     lat: position.coords.latitude,
@@ -81,7 +80,7 @@ function showPosition(position) {
   fetchUserWeatherInfo(userCoordinates);
 }
 
-// Handle any errors
+
 function showError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -102,7 +101,7 @@ function showError(error) {
 getFromSessionStorage();
 grantAccessBtn.addEventListener("click", getLocation);
 
-// fetch data from API - user weather info
+
 async function fetchUserWeatherInfo(coordinates) {
   const { lat, lon } = coordinates;
 
@@ -131,7 +130,7 @@ async function fetchUserWeatherInfo(coordinates) {
   }
 }
 
-// Render weather Info In UI
+
 function renderWeatherInfo(weatherInfo) {
   // console.log("Weather Info", weatherInfo);
   const cityName = document.querySelector("[data-cityName]");
@@ -153,7 +152,6 @@ function renderWeatherInfo(weatherInfo) {
   cloudiness.innerText = `${weatherInfo?.clouds?.all}%`;
 }
 
-// - - - - - - - - - - - -Search Weather Handling- - - - - - - - - - - -
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -163,7 +161,7 @@ searchForm.addEventListener("submit", (e) => {
   searchInp.value = "";
 });
 
-// fetch data from API - user weather info
+
 async function fetchSearchWeatherInfo(city) {
   loadingScreen.classList.add("active");
   userInfoContainer.classList.remove("active");
