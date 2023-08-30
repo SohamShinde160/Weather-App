@@ -257,6 +257,7 @@ h1 {
 .parameter:hover {
     box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.199);
     border: 1px solid rgba(255, 255, 255, 0.548);
+    scale: 1.05;
 }
 
 .parameter img {
